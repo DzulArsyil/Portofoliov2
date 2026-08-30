@@ -1,1 +1,204 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ink: #0c0c0e;
+  --color-ink-2: #101014;
+  --color-ink-3: #16161b;
+  --color-paper: #ede7da;
+  --color-paper-dim: #b6b0a3;
+  --color-paper-faint: #6e6a60;
+  --color-denki: #3e7cff;
+  --color-line: #26262c;
+
+  --font-display: "Syne", "Noto Sans JP", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-jp: "Noto Sans JP", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-denki);
+  color: var(--color-ink);
+}
+
+/* ---------- editorial type helpers ---------- */
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--color-paper) 82%, transparent);
+}
+
+@media (max-width: 640px) {
+  .text-outline {
+    -webkit-text-stroke-width: 1px;
+  }
+}
+
+.v-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.v-text-mixed {
+  writing-mode: vertical-rl;
+}
+
+/* ---------- load-in reveals (line masks) ---------- */
+
+.reveal-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.reveal-line {
+  display: block;
+  transform: translateY(112%);
+  animation: line-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes line-up {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- scroll reveals ---------- */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- ambient / ambient objects ---------- */
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-slow {
+  animation: orbit-spin 90s linear infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+.noise-layer {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+}
+
+.hairline-grid {
+  background-image: repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-paper) 5%, transparent) 0,
+    color-mix(in srgb, var(--color-paper) 5%, transparent) 1px,
+    transparent 1px,
+    transparent calc(100% / 6)
+  );
+  background-size: calc(100% / 6) 100%;
+}
+
+/* ---------- CTA underline draw ---------- */
+
+.link-draw {
+  position: relative;
+}
+
+.link-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-draw:hover::after,
+.link-draw:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- reduced motion: composed static layout ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-line,
+  .fade-in {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+
+  .scroll-reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .orbit-slow,
+  .pulse-dot {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
