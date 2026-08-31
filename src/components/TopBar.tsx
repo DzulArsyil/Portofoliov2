@@ -26,9 +26,9 @@ function JakartaClock() {
 export function TopBar() {
   return (
     <header className="fade-in absolute inset-x-0 top-0 z-30" style={{ animationDelay: "0.9s" }}>
-      <div className="mx-auto flex max-w-[1680px] items-center justify-between gap-6 px-6 py-5 md:px-10">
+      <div className="shell flex items-center justify-between gap-4 py-4 md:py-5">
         {/* Wordmark */}
-        <a href="#top" className="group flex items-baseline gap-2" aria-label="Back to top">
+        <a href="#top" className="group -ml-2 flex items-baseline gap-2 py-2 pl-2" aria-label="Back to top">
           <span className="font-display text-lg font-extrabold tracking-tight text-paper">
             M.DA
           </span>
@@ -36,21 +36,29 @@ export function TopBar() {
         </a>
 
         {/* Index nav + local time */}
-        <nav className="flex items-center gap-5 text-[11px] uppercase tracking-[0.18em] text-paper-dim md:gap-8">
-          <a href="#work" className="link-draw transition-colors duration-300 hover:text-paper">
+        <nav className="flex items-center gap-4 text-[10px] uppercase tracking-[0.16em] text-paper-dim sm:gap-6 sm:text-[11px] sm:tracking-[0.18em] md:gap-8">
+          <a
+            href="#work"
+            className="link-draw py-2 transition-colors duration-300 hover:text-paper"
+          >
             <span className="text-denki">01</span> Work
           </a>
-          <a href="#contact" className="link-draw transition-colors duration-300 hover:text-paper">
+          <a
+            href="#contact"
+            className="link-draw py-2 transition-colors duration-300 hover:text-paper"
+          >
             <span className="text-denki">02</span> Contact
           </a>
-          <span className="hidden h-3 w-px bg-line sm:block" aria-hidden="true" />
-          <span className="hidden items-center gap-2 sm:flex">
+          <span className="hidden h-3 w-px bg-line md:block" aria-hidden="true" />
+          <span className="hidden items-center gap-2 py-2 sm:flex">
             <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-denki" />
             <JakartaClock />
           </span>
         </nav>
       </div>
-      <div className="mx-auto h-px max-w-[1680px] bg-line" />
+      <div className="shell">
+        <div className="h-px bg-line" />
+      </div>
     </header>
   );
 }

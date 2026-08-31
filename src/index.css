@@ -6,8 +6,8 @@
   --color-ink-3: #16161b;
   --color-paper: #ede7da;
   --color-paper-dim: #b6b0a3;
-  --color-paper-faint: #6e6a60;
-  --color-denki: #3e7cff;
+  --color-paper-faint: #7d786c;
+  --color-denki: #48e5c2;
   --color-line: #26262c;
 
   --font-display: "Syne", "Noto Sans JP", sans-serif;
@@ -30,6 +30,25 @@ body {
 ::selection {
   background: var(--color-denki);
   color: var(--color-ink);
+}
+
+/* ---------- keyboard focus, everywhere ---------- */
+
+:focus-visible {
+  outline: 1px solid var(--color-denki);
+  outline-offset: 4px;
+}
+
+/* ---------- responsive container system ---------- */
+/* Content never escapes this box; decorative layers may. */
+
+@layer components {
+  .shell {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 1680px;
+    padding-inline: clamp(1.25rem, 3.5vw, 2.75rem);
+  }
 }
 
 /* ---------- editorial type helpers ---------- */
@@ -104,7 +123,7 @@ body {
   transform: translateY(0);
 }
 
-/* ---------- ambient / ambient objects ---------- */
+/* ---------- ambient objects ---------- */
 
 @keyframes orbit-spin {
   to {

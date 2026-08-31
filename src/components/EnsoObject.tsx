@@ -15,6 +15,8 @@ const DASH_DRAWN = `${ARC} ${100 - ARC}`;
  * Interactive abstract object: an ensō (円相) — the Zen brush circle.
  * Draw-in on load, stroke + gap respond to hover, the whole body is
  * displaced by the cursor through refs (no re-renders in the loop).
+ * Sized fluidly by its parent — it renders identically from a 140px
+ * mobile supporting role up to the 540px desktop territory.
  */
 export function EnsoObject({ outerRef, coreRef }: EnsoObjectProps) {
   const [drawn, setDrawn] = useState(false);
@@ -94,18 +96,19 @@ export function EnsoObject({ outerRef, coreRef }: EnsoObjectProps) {
       {/* core — parallaxed separately */}
       <div
         ref={coreRef}
-        className="absolute inset-0 flex flex-col items-center justify-center gap-5 will-change-transform"
+        className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 will-change-transform md:gap-5"
       >
         <span
-          className="v-text font-jp text-2xl font-medium tracking-[0.5em] text-paper-dim transition-colors duration-500 md:text-3xl"
+          lang="ja"
+          className="v-text font-jp text-xl font-medium tracking-[0.45em] text-paper-dim transition-colors duration-500 sm:text-2xl md:text-3xl md:tracking-[0.5em]"
           style={charged ? { color: "var(--color-denki)" } : undefined}
         >
           円相
         </span>
-        <span className="text-center text-[10px] uppercase leading-relaxed tracking-[0.22em] text-paper-faint">
+        <span className="text-center text-[9px] uppercase leading-relaxed tracking-[0.2em] text-paper-faint sm:text-[10px] sm:tracking-[0.22em]">
           {charged ? (
             <>
-              <span className="text-denki">電気</span> — charged
+              <span lang="ja" className="text-denki">電気</span> — charged
             </>
           ) : (
             <>object 01 — follows you</>
@@ -115,12 +118,14 @@ export function EnsoObject({ outerRef, coreRef }: EnsoObjectProps) {
 
       {/* hanko seal */}
       <div
-        className="absolute bottom-[12%] left-[8%] flex h-9 w-9 items-center justify-center border transition-colors duration-500"
+        className="absolute bottom-[12%] left-[6%] flex h-8 w-8 items-center justify-center border transition-colors duration-500 md:h-9 md:w-9"
         style={{
-          borderColor: charged ? "var(--color-denki)" : "color-mix(in srgb, var(--color-paper) 35%, transparent)",
+          borderColor: charged
+            ? "var(--color-denki)"
+            : "color-mix(in srgb, var(--color-paper) 35%, transparent)",
         }}
       >
-        <span className="font-jp text-sm font-medium text-paper-dim">作</span>
+        <span lang="ja" className="font-jp text-sm font-medium text-paper-dim">作</span>
       </div>
     </div>
   );
