@@ -25,7 +25,7 @@ Designing interfaces. Building digital experiences. 設計と構築.
 <br />
 
 <!-- Replace this image with your final portfolio screenshot when ready. -->
-<img src="https://placehold.co/1200x675/111111/F5F5F0?text=Portfolio+Preview" alt="Portfolio preview" width="900" />
+<img src="preview.png" alt="Portfolio preview" width="900" />
 
 </div>
 
