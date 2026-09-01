@@ -47,7 +47,7 @@ body {
     width: 100%;
     margin-inline: auto;
     max-width: 1680px;
-    padding-inline: clamp(1.25rem, 3.5vw, 2.75rem);
+    padding-inline: 1.5rem;
   }
 }
 

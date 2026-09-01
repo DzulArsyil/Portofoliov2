@@ -2,7 +2,7 @@ import { Reveal } from "./Reveal";
 
 const LINKS = [
   { label: "Linktree", href: "https://linktr.ee/DzulArsyil" },
-  { label: "GitHub — ArsyilAziz", href: "https://github.com/ArsyilAziz" },
+  { label: "GitHub — DzulArsyil", href: "https://github.com/DzulArsyil" },
   { label: "Instagram — @designwithdzul", href: "https://www.instagram.com/designwithdzul/" },
   { label: "LinkedIn — mdzularsyilaziz", href: "https://www.linkedin.com/in/mdzularsyilaziz/" },
 ];
@@ -17,9 +17,9 @@ export function Footer() {
             <span lang="ja" className="font-jp tracking-[0.3em]">連絡</span>
           </p>
           <h2 className="font-display font-extrabold uppercase leading-[0.98] tracking-[-0.02em] text-paper">
-            <span className="block text-[clamp(2.2rem,7vw,6.2rem)]">Let&rsquo;s make</span>
+            <span className="block text-[clamp(2.2rem,7vw,6.2rem)]">READY TO START</span>
             <span className="text-outline block text-[clamp(2.2rem,7vw,6.2rem)]">
-              something rare<span className="text-denki" style={{ WebkitTextStroke: "0" }}>.</span>
+              YOUR PROJECT?<span className="text-denki" style={{ WebkitTextStroke: "0" }}>.</span>
             </span>
           </h2>
         </Reveal>
@@ -31,7 +31,7 @@ export function Footer() {
             rel="noreferrer"
             className="group -ml-2 flex w-fit items-center gap-4 py-3 pl-2 text-sm uppercase tracking-[0.18em] text-paper transition-colors duration-300 hover:text-denki md:text-base"
           >
-            Start a conversation
+            LET'S TALK
             <svg
               viewBox="0 0 14 14"
               className="h-4 w-4 stroke-current transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -66,8 +66,7 @@ export function Footer() {
         <div className="shell flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-5 text-[10px] uppercase tracking-[0.2em] text-paper-faint">
           <span>© 2026 M. Dzul&rsquo;Arsyil Aziz</span>
           <span className="hidden md:inline">
-            Set in Syne &amp; IBM Plex Mono ·{" "}
-            <span lang="ja" className="font-jp tracking-[0.3em]">間を以て</span>
+            <span lang="ja" className="font-jp tracking-[0.3em]">よろしくね！</span>
           </span>
           <a href="#top" className="link-draw py-2 transition-colors duration-300 hover:text-paper">
             Back to top ↑

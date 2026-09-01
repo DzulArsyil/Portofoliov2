@@ -17,29 +17,29 @@ type Work = {
 const WORKS: Work[] = [
   {
     index: "01",
-    title: "Shizuka Portfolio",
-    jp: "静",
-    discipline: "Personal portfolio · Motion & front-end",
-    year: "—",
-    href: "https://github.com/ArsyilAziz/shizuka-portfolio",
+    title: "Portfolio",
+    jp: "私",
+    discipline: "Personal portfolio · Design",
+    year: "2023-2026",
+    href: "https://lnkd.in/p/g7gaM4gC",
     external: true,
   },
   {
     index: "02",
-    title: "Detective UI Concept",
+    title: "Sentra Warga",
     jp: "探",
-    discipline: "Anime-inspired UI/UX exploration · Interface design",
-    year: "2025",
-    href: "https://www.instagram.com/p/DJE22H5TLPZ/",
+    discipline: "UI/UX Design · Web App · frond-end",
+    year: "2026",
+    href: "https://www.instagram.com/p/DXG4Z-fkwaK/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==",
     external: true,
   },
   {
     index: "03",
-    title: "dzularsyil-id",
-    jp: "本",
-    discipline: "This site · Editorial identity & front-end",
-    year: "2026",
-    href: "https://github.com/DzulArsyil/dzularsyil-id",
+    title: "Kartina",
+    jp: "女",
+    discipline: "UI/UX Design · Finalis Competition",
+    year: "2025",
+    href: "https://www.instagram.com/p/DcEQU7FgT5a/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==",
     external: true,
   },
   {
@@ -55,7 +55,7 @@ const WORKS: Work[] = [
 export function WorkIndex() {
   return (
     <section id="work" className="relative border-t border-line">
-      <div className="shell py-20 md:py-28">
+      <div className="shell py-20 md:py-28 px-6">
         {/* section head */}
         <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
           <div>
@@ -66,7 +66,7 @@ export function WorkIndex() {
               Selected
               <br />
               <span className="text-outline">Work</span>
-              <span className="ml-4 align-top font-mono text-sm font-normal tracking-normal text-paper-faint">
+              <span className="ml-4 align-top font-mono text-sm font-normal tracking-normal text-paper-faint" >
                 (04)
               </span>
             </h2>
@@ -88,7 +88,7 @@ export function WorkIndex() {
         <ol className="border-t border-line">
           {WORKS.map((work, i) => (
             <Reveal as="li" key={work.index} delay={i * 90}>
-              <article className="group relative grid grid-cols-[auto_1fr_auto] items-baseline gap-x-4 gap-y-1 border-b border-line py-6 transition-colors duration-500 hover:bg-ink-2 md:grid-cols-[64px_1fr_auto_auto] md:gap-x-8 md:py-8">
+              <article className="group relative grid grid-cols-[auto_1fr_auto] items-baseline gap-x-4 gap-y-1 border-b border-line py-6 px-8 transition-colors duration-500 hover:bg-ink-2 md:grid-cols-[64px_1fr_auto_auto] md:gap-x-8 md:py-8">
                 {/* accent wipe */}
                 <span
                   className="absolute left-0 top-0 h-full w-[3px] origin-top scale-y-0 bg-denki transition-transform duration-500 group-hover:scale-y-100"
@@ -125,7 +125,7 @@ export function WorkIndex() {
 
         <Reveal className="mt-8 flex justify-end" delay={120}>
           <a
-            href="https://github.com/ArsyilAziz"
+            href="https://github.com/DzulArsyil"
             target="_blank"
             rel="noreferrer"
             className="link-draw py-2 text-[11px] uppercase tracking-[0.22em] text-paper-dim transition-colors duration-300 hover:text-denki"

@@ -111,7 +111,7 @@ export function Hero() {
         style={{ fontSize: "clamp(14rem, 44vw, 44rem)", opacity: 0.045 }}
         aria-hidden="true"
       >
-        間
+        力
       </div>
       <div className="noise-layer pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden="true" />
       <div
@@ -124,21 +124,6 @@ export function Hero() {
       />
 
       <TopBar />
-
-      {/* ---------- left vertical rail (desktop only — it would crowd mobile) ---------- */}
-      <aside
-        className="fade-in absolute bottom-28 left-6 z-10 hidden flex-col items-center gap-8 md:left-8 lg:left-10 lg:flex"
-        style={{ animationDelay: "1.15s" }}
-        aria-hidden="true"
-      >
-        <span className="v-text-mixed text-[10px] uppercase tracking-[0.34em] text-paper-faint [transform:rotate(180deg)]">
-          Portfolio — Vol. 01 / 2026
-        </span>
-        <span className="h-16 w-px bg-line" />
-        <span lang="ja" className="v-text font-jp text-xs tracking-[0.5em] text-paper-dim">
-          余白の美
-        </span>
-      </aside>
 
       {/* ---------- interactive object ----------
           Mobile : supporting visual, upper-right, partly bled off canvas
@@ -162,26 +147,26 @@ export function Hero() {
             style={{ animationDelay: "0.25s" }}
           >
             <span>UI/UX Designer</span>
-            <span className="text-denki" aria-hidden="true">/</span>
+            <span className="text-denki" aria-hidden="true"> · </span>
             <span>Front-end Developer</span>
-            <span className="hidden text-paper-faint md:inline" aria-hidden="true">—</span>
-            <span className="hidden text-paper-faint md:inline">Jakarta, ID · 6.2°S 106.8°E</span>
+            <span className="hidden text-paper-faint md:inline" aria-hidden="true"> — </span>
+            <span className="hidden text-paper-faint md:inline">Karawang, Indonesia</span>
           </p>
         </div>
 
         <h1 className="font-display font-extrabold uppercase leading-[0.94] tracking-[-0.02em]">
           <span className="reveal-mask">
             <span className="reveal-line" style={{ animationDelay: "0.38s", fontSize: NAME_FLUID }}>
-              <span className="mr-[0.18em] align-top font-mono text-[0.32em] font-medium tracking-normal text-denki">
+              <span className="tracking-normal text-denki">
                 M.
               </span>
-              Dzul&rsquo;Arsyil
+               Dzul&rsquo;Arsyil
             </span>
           </span>
           <span className="reveal-mask">
             <span
-              className="reveal-line text-outline md:ml-[7vw]"
-              style={{ animationDelay: "0.5s", fontSize: NAME_FLUID }}
+              className="reveal-line text-outline md:ml-[7vw] ml-[50px]"
+              style={{ animationDelay: "0.5s", fontSize: NAME_FLUID, marginLeft: "50px" }}
             >
               Aziz<span className="text-denki" style={{ WebkitTextStroke: "0" }}>.</span>
             </span>
@@ -227,13 +212,6 @@ export function Hero() {
               </svg>
             </span>
           </a>
-
-          <div className="hidden items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-paper-faint md:flex">
-            <span className="relative h-10 w-px overflow-hidden bg-line">
-              <span className="pulse-dot absolute left-0 top-0 h-3 w-px bg-denki" />
-            </span>
-            Scroll
-          </div>
 
           <div className="text-right text-[10px] uppercase leading-relaxed tracking-[0.2em] text-paper-faint md:text-[11px]">
             <span ref={coordRef} className="tabular-nums">

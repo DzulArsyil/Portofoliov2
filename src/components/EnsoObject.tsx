@@ -95,26 +95,18 @@ export function EnsoObject({ outerRef, coreRef }: EnsoObjectProps) {
 
       {/* core — parallaxed separately */}
       <div
-        ref={coreRef}
-        className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 will-change-transform md:gap-5"
-      >
-        <span
-          lang="ja"
-          className="v-text font-jp text-xl font-medium tracking-[0.45em] text-paper-dim transition-colors duration-500 sm:text-2xl md:text-3xl md:tracking-[0.5em]"
-          style={charged ? { color: "var(--color-denki)" } : undefined}
-        >
-          円相
-        </span>
-        <span className="text-center text-[9px] uppercase leading-relaxed tracking-[0.2em] text-paper-faint sm:text-[10px] sm:tracking-[0.22em]">
-          {charged ? (
-            <>
-              <span lang="ja" className="text-denki">電気</span> — charged
-            </>
-          ) : (
-            <>object 01 — follows you</>
-          )}
-        </span>
-      </div>
+  ref={coreRef}
+  className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 will-change-transform md:gap-5"
+>
+  {/* Image pengganti 私 */}
+  <div
+    className="w-24 h-24 md:w-30 md:h-30 lg:w-34 lg:h-34 bg-contain bg-no-repeat bg-center transition-all duration-500"
+    style={{
+      backgroundImage: `url('/dist/assets/watashi.png')`,
+      ...(charged ? { filter: "hue-rotate(90deg)" } : {}),
+    }}
+  />
+</div>
 
       {/* hanko seal */}
       <div
