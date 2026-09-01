@@ -102,7 +102,7 @@ export function EnsoObject({ outerRef, coreRef }: EnsoObjectProps) {
   <div
     className="w-24 h-24 md:w-30 md:h-30 lg:w-34 lg:h-34 bg-contain bg-no-repeat bg-center transition-all duration-500"
     style={{
-      backgroundImage: `url('/dist/assets/watashi.png')`,
+      backgroundImage: `url('/src/components/watashi.png')`,
       ...(charged ? { filter: "hue-rotate(90deg)" } : {}),
     }}
   />
