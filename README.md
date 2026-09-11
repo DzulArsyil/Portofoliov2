@@ -12,6 +12,10 @@ Designing interfaces. Building digital experiences. 設計と構築.
 [![GitHub](https://img.shields.io/badge/GitHub-DzulArsyil-111111?style=for-the-badge&logo=github)](https://github.com/DzulArsyil)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-111111?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/mdzularsyilaziz/)
 
+<br />
+
+<img src="./assets/readme-motion.svg" alt="Animated Design Code Growth visual" width="100%" />
+
 </div>
 
 ---
@@ -24,7 +28,6 @@ Designing interfaces. Building digital experiences. 設計と構築.
 
 <br />
 
-<!-- Replace this image with your final portfolio screenshot when ready. -->
 <img src="preview.png" alt="Portfolio preview" width="900" />
 
 </div>
